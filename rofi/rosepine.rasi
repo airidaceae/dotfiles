@@ -1,0 +1,195 @@
+/*
+ * Rosé Pine Rofi theme
+ * 
+ */
+
+* {
+    blank:          rgba(   0,   0,   0,   0% );
+    base:           rgba(  25,  23,  36,  95% );
+    surface:        rgba(  31,  29,  46, 100% );
+    overlay:        rgba(  38,  35,  58, 100% );
+    muted:          rgba( 110, 106, 134, 100% );
+    subtle:         rgba( 144, 140, 170, 100% );
+    text:           rgba( 224, 222, 244, 100% );
+    love:           rgba( 235, 111, 146, 100% );
+    gold:           rgba( 246, 193, 119, 100% );
+    rose:           rgba( 235, 188, 186, 100% );
+    pine:           rgba(  49, 116, 143, 100% );
+    foam:           rgba( 156, 207, 216, 100% );
+    iris:           rgba( 196, 167, 231, 100% );
+    highlight-low:  rgba(  33,  32,  46,  95% );
+    highlight-med:  rgba(  64,  61,  82,  95% );
+    highlight-high: rgba(  82,  79, 103,  95% );
+}
+window {
+    transparency:     "real";
+    border:           2px;
+	border-radius:    8px;
+    padding:          2px;
+	background-color: @base;
+	border-color:     @highlight-med;
+}
+mainbox {
+    border:           0;
+    padding:          4;
+	background-color: @blank;
+}
+message {
+    background-color: @blank;
+}
+textbox {
+    text-color:       @text;
+    border:           0px 0px 1px 0px ;
+    border-radius:    0px 0px 0px 0px ;
+    background-color: @blank;
+    border-color:     @highlight-med;
+    border-radius:    0px;
+    padding:          8px 0px 8px 6px;
+}
+listview {
+    fixed-height:     0;
+    border:           0px 0px 0px 0px ;
+	border-radius:    0px;
+	margin:           5px 0px 1px 0px;
+    border-color:     @blank;
+    spacing:          4px ;
+    scrollbar:        true;
+    padding:          2px 0px 0px ;
+	background-color: @blank;
+}
+element {
+    border:           0;
+	border-radius:    3;
+	margin:           0px 0px 0px 0px;
+    padding:          3px ;
+	background-color: @blank;
+}
+element-text {
+    background-color: @blank;
+    text-color:       inherit;
+}
+element-icon {
+    margin:           2px 3px 0px 3px;
+    background-color: @blank;
+}
+element.normal.normal {
+    Background-color: @blank;
+    text-color:       @text;
+}
+element.normal.urgent {
+    background-color: @blank;
+    text-color:       @love;
+}
+element.normal.active {
+    background-color: @blank;
+    text-color:       @pine;
+}
+element.selected.normal {
+    background-color: @highlight-med;
+    text-color:       @text;
+}
+element.selected.urgent {
+    background-color: @love;
+    text-color:       @text;
+}
+element.selected.active {
+    background-color: @pine;
+    text-color:       @text;
+}
+element.alternate.normal {
+    background-color: @blank;
+    text-color:       @text;
+}
+element.alternate.urgent {
+    background-color: @blank;
+    text-color:       @love;
+}
+element.alternate.active {
+    background-color: @blank;
+    text-color:       @pine;
+}
+scrollbar {
+    width:            4px ;
+    border:           0;
+	margin:           0px 0px 0px 2px;
+    handle-color:     @highlight-med;
+    handle-width:     8px ;
+    padding:          0;
+	background-color: @blank;
+}
+sidebar {
+    border:           2px dash 0px 0px ;
+    border-color:     @highlight-med;
+}
+mode-switcher {
+	background-color: @blank;
+	border:           0px;
+	border-color:     @blank;
+	border-radius:    0px;
+}
+button {
+    spacing:          0;
+	background-color: @base;
+    text-color:       @subtle;
+	border:           0px 0px 0px 2px;
+	border-radius:    4px;
+	border-color:     @blank;
+}
+button selected {
+    background-color: @overlay;
+    text-color:       @text;
+}
+inputbar {
+    spacing:          0px;
+    text-color:       @text;
+    padding:          0px 0px 0px 0px;
+	border:           0px 0px 1px 0px;
+	border-radius:    4px;
+	border-color:     rgba ( 0, 0, 0, 40 % );
+	background-color: @surface;
+	//background-color: @love;
+    children:         [ prompt,textbox-prompt-colon,entry,case-indicator ];
+}
+case-indicator {
+    spacing:          0;
+    text-color:       @text;
+	background-color: inherit;
+}
+num-filtered-rows {
+    spacing:          0;
+    text-color:       @text;
+	background-color: inherit;
+}
+num-rows {
+    spacing:          0;
+    text-color:       @text;
+	background-color: inherit;
+}
+entry {
+    spacing:          0;
+    text-color:       @text;
+	background-color: inherit;
+	padding:          4px 4px 4px 0px;
+}
+prompt {
+    spacing:          0;
+    text-color:       @text;
+	background-color: @overlay;
+	padding:          4px 0px 4px 6px;
+	border:           0px;
+	border-color:     @highlight-med;
+	border-radius:    0px 0px 0px 0px;
+}
+textbox-prompt-colon {
+    expand:           false;
+    str:              ":";
+    margin:           0px 0.3000em 0.0000em 0.0000em ;
+    text-color:       inherit;
+	background-color: @overlay;
+	padding:          4px 4px 4px 0px;
+	border:           0px;
+	border-color:     @highlight-med;
+	border-radius:    0px 0px 0px 0px;
+}
+
+/* vim: ft=css

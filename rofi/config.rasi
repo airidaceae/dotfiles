@@ -1,0 +1,16 @@
+configuration {
+  
+  font: "Open Sans 11";
+  show-icons: true;
+  timeout {
+      action: "kb-cancel";
+      delay:  15;
+  }
+
+  filebrowser {
+      directories-first: true;
+      sorting-method:    "name";
+  }
+}
+@import "~/.config/rofi/prettyinpink.rasi"
+@theme "~/.config/rofi/prettyinpink.rasi"
