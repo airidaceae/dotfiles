@@ -1,0 +1,27 @@
+[[language]]
+name = "tml"
+scope = "scope.tml"
+injection-regex = "tml"
+file-types = ["tml"]
+comment-token = ";"
+roots = []
+grammar = "clojure"
+
+[[language]]
+name = "c"
+indent = { tab-width = 4, unit = " " }
+
+[[language]]
+name = "rust"
+indent = { tab-width = 4, unit = " " }
+
+[language.config]
+cargo = { allFeatures = true }
+checkOnSave = { allTargets = true }
+inlayHints.bindingModeHints.enable = false
+inlayHints.closingBraceHints.minLines = 10
+inlayHints.closureReturnTypeHints.enable = "with_block"
+inlayHints.discriminantHints.enable = "fieldless"
+inlayHints.lifetimeElisionHints.enable = "skip_trivial"
+inlayHints.typeHints.hideClosureInitialization = false
+# rust-analyzer.inlayHints.chainingHints.enable = false

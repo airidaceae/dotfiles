@@ -1,0 +1,40 @@
+theme = "prettyinpink"
+
+[editor]
+line-number = "relative"
+shell = ["zsh", "-c"]
+auto-format = false
+
+[editor.soft-wrap]
+enable = true
+max-wrap = 25
+max-indent-retain = 0
+wrap-indicator = ""
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.file-picker]
+hidden = false
+
+[editor.lsp]
+display-messages = true
+display-inlay-hints = false
+
+[editor.whitespace.render]
+space = "all"
+tab = "all"
+newline = "none"
+
+[editor.whitespace.characters]
+space = "·"
+nbsp = "⍽"
+tab = "→"
+tabpad = "·"
+
+[editor.indent-guides]
+render = true
+character = "│"
+

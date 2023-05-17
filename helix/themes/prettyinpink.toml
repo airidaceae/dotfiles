@@ -1,0 +1,108 @@
+
+# Author: sudo-iris
+
+"ui.background" = { }
+"ui.menu" = { fg = "text", bg = "overlay" }
+"ui.menu.selected" = { fg = "iris", bg = "surface" }
+"ui.linenr" = { fg = "subtle" }
+"ui.linenr.selected" = { fg = "peach", modifiers = ["bold"] }
+"ui.selection" = { bg = "highlightMed" }
+"comment" = {fg = "subtle", modifiers = ["italic"] }
+"ui.statusline" = {fg = "text", bg = "base" }
+"ui.statusline.insert" = {fg = "base", bg = "ice", modifiers = ["bold"]}
+"ui.statusline.normal" = {fg = "base", bg = "peach", modifiers = ["bold"]}
+"ui.statusline.select" = {fg = "base", bg = "iris", modifiers = ["bold"]}
+"ui.statusline.inactive" = { fg = "subtle", bg = "surface" }
+"ui.cursor" = { fg = "peach", modifiers = ["reversed"] }
+"ui.highlight" = { bg = "highlightLow"}
+"ui.text" = { fg = "text" }
+"ui.text.focus" = { fg = "ice", modifiers = ["bold"]}
+"ui.text.info" = {fg = "sea", modifiers = ["bold"]}
+"ui.virtual.whitespace" = "muted"
+"ui.virtual.inlay-hint" = {fg = "subtle", modifiers = ["italic"]}
+"ui.virtual.inlay-hint.parameter" =  {fg = "subtle", modifiers = ["italic"]}
+"ui.virtual.inlay-hint.type" = {fg = "subtle", modifiers = ["italic"]}
+"operator" = "text"
+"variable" = {fg = "text", modifiers = ["italic"] }
+"variable.parameter" = {fg = "iris", modifiers = ["italic"] }
+"variable.other.member" = "cold"
+"variable.builtin" = "kiss"
+"constant.numeric" = "iris"
+"constant" = "gold"
+"attributes" = "gold" 
+"type" = "cold"
+"ui.cursor.match" = { fg = "gold", modifiers = ["underlined"] }
+"string" = "gold"
+"string.regexp" = "kiss"
+"property" = "ice"
+"constant.character.escape" = "subtle"
+"function" = "peach"
+"function.builtin" = {fg = "peach", modifiers = ["italic"] }
+"function.method" = "ice"
+"function.macro" = "iris"
+"constructor" = "kiss"
+"special" = "gold"
+"keyword" = "sea"
+"label" = "iris"
+"namespace" = "iris"
+"ui.popup" = { bg = "surface" }
+"ui.popup.info" = { bg = "surface" }
+"ui.window" = { bg = "base" }
+"ui.help" = {bg = "overlay", fg = "sea" }
+"text" = "text"
+"diff.plus" = "lush"
+"diff.delta" = "iris"
+"diff.minus" = "kiss"
+
+"info" = "gold"
+"hint" = "gold"
+"error" = "kiss"
+
+# Diagnostics (editing area)
+"diagnostic" = { modifiers = ["underlined"] }
+"diagnostic.info"    = { fg = "gold", modifiers = ["underlined"] }
+"diagnostic.hint"    = { fg = "gold", modifiers = ["underlined"] }
+"diagnostic.debug"   = { fg = "foam", modifiers = ["underlined"] }
+"diagnostic.warning" = { fg = "peach", modifiers = ["underlined"] }
+"diagnostic.error"   = { fg = "kiss", modifiers = ["underlined"] }
+
+"markup.heading.marker" = "subtle"
+"markup.heading.1" = { fg = "peach", modifiers = ["bold"] }
+"markup.heading.2" = { fg = "gold", modifiers = ["bold"] }
+"markup.heading.3" = { fg = "peach", modifiers = ["bold"] }
+"markup.heading.4" = { fg = "sea", modifiers = ["bold"] }
+"markup.heading.5" = { fg = "ice", modifiers = ["bold"] }
+"markup.heading.6" = { fg = "iris", modifiers = ["bold"] }
+"markup.list" = { fg = "kiss" }
+"markup.bold" = { fg = "gold", modifiers = ["bold"] }
+"markup.italic" = { fg = "iris", modifiers = ["italic"] }
+"markup.link.url" = { fg = "sea", modifiers = ["underlined"]}
+"markup.link.text" = { fg = "ice" }
+"markup.quote" = { fg = "kiss" }
+"markup.raw" = { fg = "ice" }
+
+[palette]
+backgr = "#290308"
+base = "#191724"
+surface = "#1f1d2e"
+overlay = "#26233a"
+inactive= "#5b5579"
+subtle = "#6272a4"
+muted = "#6e6a86"
+text = "#ffdbec"
+kiss = "#f3668e"
+gold = "#f6c177" 
+peach = "#e4a5a2"
+pink = "#f3b1c9"
+sea = "#2593be"
+ice = "#00c8c8"
+iris = "#bb9aff"
+yoru = "#693cc7"
+cold = "#9ccfd8"
+lush = "#008665"
+snow = "#e0def4"
+highlightLow = "#696876"
+highlightMed = "#646176"
+highlightHigh = "#76738b"
+highlightInactive = "#211f2d"
+highlightOverlay  = "#3a384a"
