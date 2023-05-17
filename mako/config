@@ -1,0 +1,65 @@
+####
+## man 5 mako
+####
+
+
+# Set maximum number of expired notifications to keep in the history buffer to n. If the buffer is full, newly expired notifications replace the oldest ones. If 0, history is disabled.
+max-history=10
+
+# If set, mako will save notifications that have reached their timeout into the history buffer instead of immediately deleting them. max-history determines the size of the history buffer.
+history=1
+
+# Set maximum number of visible notifications to n. Older notifications will be hidden. If -1, all notifications are visible.
+max-visible=5
+
+# Arrange mako at the specified layer, relative to normal windows. Supported values are background, bottom, top, and overlay. Using overlay will cause notifications to be displayed above fullscreen windows, though this may also occur at top depending on your compositor.
+layer=top
+
+# Show notifications at the specified position on the output. Supported values are top-right, top-center, top-left, bottom-right, bottom-center, bottom-left, center-right, center-left and center.
+anchor=bottom-right
+
+# Sorts incoming notifications by time and/or priority in ascending(+) or descending(-) order.
+sort=-time
+
+# Applications may request an action to be associated with activating a notification. Disabling this will cause mako to ignore these requests.
+actions=1
+
+# Set the default timeout to timeout in milliseconds. To disable the timeout, set it to zero.
+default-timeout=3000
+
+# If set, mako will ignore the expire timeout sent by notifications and use the one provided by default-timeout instead.
+ignore-timeout=0
+
+
+### Theme/Styling
+
+# Font in Pango format
+font=SauceCodePro Nerd Font 10
+markup=1
+
+# Colors, alpha as last pair
+background-color=#5a2431cc
+text-color=#ffdbf2ff
+#border-color=#2a2738ff
+border-color=#ffdbf2aa
+progress-color=source #c4a7e7cc
+
+# Layout
+width=400
+height=120
+margin=8
+padding=8,8,8,8
+border-size=2
+border-radius=7
+icon-location=left
+text-alignment=left
+
+# Icons
+icons=1
+max-icon-size=80
+icon-path=/usr/share/Papirus-Light
+
+
+# makoctl set-mode do-not-disturb
+[mode=do-not-disturb]
+invisible=1
