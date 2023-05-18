@@ -18,10 +18,11 @@
 
 
 # adapted from a script made by the beautiful and talented marceline cramer <3
+# adapted further by the aforementioned marceline cramer <3 ily roux
 
 FIFO_PATH="/tmp/wallpaper-daemon-pipe"
 WALLPAPERS_PATH="$HOME/Pictures/Wallpapers"
-alias WP_LIST="/bin/find -L $WALLPAPERS_PATH -type f"
+alias WP_LIST="/bin/find -L $WALLPAPERS_PATH -type f | /bin/sort --dictionary-order --ignore-case"
 change_wp() {
 	swww img "$1" \
 		--transition-type wipe \
