@@ -1,7 +1,25 @@
 #!/bin/sh
 
+# wallpaper-daemon a daemon for randomizing and changing wallpapers using swww
+# Copyright (C) 2023 Roux
 
-SOCK_PATH="/tmp/wallpaper-daemon-pipe"
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU Affero General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU Affero General Public License for more details.
+
+# You should have received a copy of the GNU Affero General Public License
+# along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+
+# adapted from a script made by the beautiful and talented marceline cramer <3
+
+FIFO_PATH="/tmp/wallpaper-daemon-pipe"
 WALLPAPERS_PATH="$HOME/Pictures/Wallpapers"
 alias WP_LIST="/bin/find -L $WALLPAPERS_PATH -type f"
 change_wp() {
@@ -14,11 +32,12 @@ change_wp() {
 		--transition-bezier .42,0,.58,1
 }
 
-rm $SOCK_PATH
-mkfifo $SOCK_PATH
+# sorry for the shitty cleanup :P
+rm $FIFO_PATH
+mkfifo $FIFO_PATH
 
 current_wallpaper=0
-tail -f $SOCK_PATH | while read -r i; do
+tail -f $FIFO_PATH | while read -r i; do
 	size=$(WP_LIST | wc -l)
 	case "$i" in
 	rand)
@@ -35,10 +54,10 @@ tail -f $SOCK_PATH | while read -r i; do
 
 		change_wp "$image"
 		;;
+
 	next)
 		counter=0
 		for image in $(WP_LIST); do
-			#use a temp variable here so we can handle more cases properly
 			if [ $((current_wallpaper + 1)) -gt $((size - 1)) ]; then
 				tmp=$((current_wallpaper - size))
 			else
@@ -55,6 +74,7 @@ tail -f $SOCK_PATH | while read -r i; do
 
 		done
 		;;
+
 	prev)
 		counter=0
 		for image in $(WP_LIST); do
@@ -75,6 +95,4 @@ tail -f $SOCK_PATH | while read -r i; do
 		done
 		;;
 	esac
-	echo "value read from socket: $i"
-	echo "current wallpaper: $current_wallpaper"
 done

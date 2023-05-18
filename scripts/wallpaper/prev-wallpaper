@@ -1,0 +1,4 @@
+#!/bin/sh
+
+echo prev > /tmp/wallpaper-daemon-pipe
+

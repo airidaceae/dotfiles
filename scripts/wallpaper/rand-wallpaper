@@ -1,0 +1,3 @@
+#!/bin/sh
+
+echo rand > /tmp/wallpaper-daemon-pipe
