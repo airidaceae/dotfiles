@@ -1,0 +1,80 @@
+#!/bin/sh
+
+
+SOCK_PATH="/tmp/wallpaper-daemon-pipe"
+WALLPAPERS_PATH="$HOME/Pictures/Wallpapers"
+alias WP_LIST="/bin/find -L $WALLPAPERS_PATH -type f"
+change_wp() {
+	swww img "$1" \
+		--transition-type wipe \
+		--transition-step 255 \
+		--transition-duration 1 \
+		--transition-fps 144 \
+		--transition-angle "$(shuf -i 0-359 -n 1)" \
+		--transition-bezier .42,0,.58,1
+}
+
+rm $SOCK_PATH
+mkfifo $SOCK_PATH
+
+current_wallpaper=0
+tail -f $SOCK_PATH | while read -r i; do
+	size=$(WP_LIST | wc -l)
+	case "$i" in
+	rand)
+		image=$(WP_LIST | shuf -n 1)
+		counter=0
+		for file in $(WP_LIST); do
+			if cmp "$file" "$image"; then
+				current_wallpaper=$counter
+				break
+			else
+				counter=$((counter + 1))
+			fi
+		done
+
+		change_wp "$image"
+		;;
+	next)
+		counter=0
+		for image in $(WP_LIST); do
+			#use a temp variable here so we can handle more cases properly
+			if [ $((current_wallpaper + 1)) -gt $((size - 1)) ]; then
+				tmp=$((current_wallpaper - size))
+			else
+				tmp=$current_wallpaper
+			fi
+
+			if [ $((tmp + 1)) -eq $counter ]; then
+				current_wallpaper=$((tmp + 1))
+				change_wp "$image"
+				break
+			else
+				counter=$((counter + 1))
+			fi
+
+		done
+		;;
+	prev)
+		counter=0
+		for image in $(WP_LIST); do
+			if [ $((current_wallpaper - 1)) -lt 0 ]; then
+				tmp=$((current_wallpaper + size))
+			else
+				tmp=$current_wallpaper
+			fi
+
+			if [ $((tmp - 1)) -eq $counter ]; then
+				current_wallpaper=$((tmp - 1))
+				change_wp "$image"
+				break
+			else
+				counter=$((counter + 1))
+			fi
+
+		done
+		;;
+	esac
+	echo "value read from socket: $i"
+	echo "current wallpaper: $current_wallpaper"
+done
