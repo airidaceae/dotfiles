@@ -2,9 +2,8 @@ ignore-empty-password
 font=Tamzen
 image=~/Pictures/Wallpapers/catlock.jpg
 scaling=fill
-indicator-radius=75
-indicator-thickness=15
-indicator-idle-visible
+indicator-radius=65
+indicator-thickness=13
 inside-color=241719cc
 inside-clear-color=f6c177cc
 inside-ver-color=#e7afa7cc
